@@ -1,20 +1,22 @@
 'use strict';
 
 angular.module('mozioApp', [
-  'ngCookies',
+  'ui.router',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ajoslin.promise-tracker'
 ])
-  .config(function ($routeProvider, $locationProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+
+    $urlRouterProvider.otherwise('/');
+
+    $stateProvider
+      .state('/', {
+        url: '/',
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
-      
+
     $locationProvider.html5Mode(true);
+
   });

@@ -4,9 +4,11 @@ blue = #0087ff
 orange = #f99e02
 
 body
-  padding-top 20px
+  padding-top 0px
   padding-bottom 20px
 
+h1 
+	-webkit-font-smoothing antialiased
 .header,
 .marketing,
 .footer
@@ -27,10 +29,25 @@ body
   color #777
   border-top 1px solid #e5e5e5
 
-
+// Navbar
+.logo
+	width 120px
+	padding-bottom 20px
+	
+// Header/Above Fold
+#header 
+	background-color blue
+	z-index -99
+	padding-top 20px
+	h1 
+		color white
+		font-size 2em
+	h3
+		color white
+		
 @media (min-width:768px)
    .container 
-    	//max-width 66.25em //730px
+    	max-width 1060px//730px
     	width 93.96226%
     	
 .container-narrow > hr
@@ -38,8 +55,7 @@ body
   
 .jumbotron
   text-align center
-  border-bottom 1px solid #e5e5e5
-  border-bottom 0
+  background-color rgba(0,0,0,0)
   .btn
     font-size 21px
     padding 14px 24px
