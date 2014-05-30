@@ -25,7 +25,6 @@ body
   padding-right 15px
 
 .header
-  border-bottom 1px solid white //#e5e5e5
   margin-bottom 30px
   h3
     margin-top 0
@@ -40,7 +39,7 @@ body
 
 // Navbar
 .logo
-	width 120px
+	width 100px
 	padding-bottom 20px
 	
 // Header/Above Fold
@@ -49,13 +48,15 @@ body
 	z-index -99
 	padding-top 20px
 	color white
+	background url('http://farm3.static.flickr.com/2634/4055095614_e9b1ac206d_b.jpg')
+	background-size cover
 	h1, h2, h3
 		-webkit-font-smoothing antialiased
 		margin-top 10px
 	.hero
 		text-align center
 		margin-bottom 20px
-		padding-top 15% 
+		padding-top 7% 
 
 
 // EMAIL 
@@ -82,6 +83,9 @@ label
 
 .checked
 	background-color blue
+	box-shadow 0 -3px 0 rgba(22,71,114,0.3) inset
+	&:hover 
+		box-shadow 0 .4em 1em orange inset
 
 label input, label textarea
   display block
@@ -243,28 +247,14 @@ input[type=radio]
 	  -webkit-transition all 0.5s
 	  transition all 0.5s
 	  	
-.sent
-  filter unqoute("progid:DXImageTransform.Microsoft.Alpha(enabled=false)")
-  opacity 1
-  -moz-transition all 0.5s ease-in-out
-  -o-transition all 0.5s ease-in-out
-  -webkit-transition all 0.5s ease-in-out
-  -webkit-transition-delay 1s
-  transition all 0.5s ease-in-out
-    
-.hidden
-  filter unqoute("progid:DXImageTransform.Microsoft.Alpha(Opacity=0)")
-  opacity 0
-  position absolute
-  z-index -1
-
-.no-placeholder
-  display none
-
-.ie-lt9
-  .no-placeholder
-    display block
-
+.logos 
+	text-align center
+	position absolute
+	bottom 5px
+	img 
+		width 125px
+		opacity .5
+		margin-right 50px
 
 @media (min-width:768px)
    .container 
