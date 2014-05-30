@@ -55,6 +55,7 @@ body
 	.hero
 		text-align center
 		margin-bottom 20px
+		padding-top 15% 
 
 
 // EMAIL 
@@ -76,15 +77,8 @@ label
   transition all 0.5s
   textarea
     min-height 6em
-    
-.date-picker
-	background url(calendar-icon.png) no-repeat 6px center white
-.airport-field input
-	background url('http://widget.mozio.com/airport-marker.png') no-repeat 5px center white
-	background-position-x 7px
-.destination-field input
-	background url('http://widget.mozio.com/location-marker.png') no-repeat 5px center white
-	background-position-x 10px
+
+
 
 .checked
 	background-color blue
@@ -105,23 +99,12 @@ label input, label textarea
 
 label input:focus, label textarea:focus
   outline none
-  box-shadow 0 0 1em rgba(0,135,255,.8)
-  -moz-transition all 0.5s
-  -o-transition all 0.5s
-  -webkit-transition all 0.5s
-  transition all 0.5s
+  box-shadow 0 0 1em rgba(255,255,255,1)
+  -moz-transition all 0.2s
+  -o-transition all 0.2s
+  -webkit-transition all 0.2s
+  transition all 0.2s
   
-
-.clearfix
-  zoom 1
-  &:after
-    clear both
-
-.clearfix:before, .clearfix:after
-  content "\0020"
-  display block
-  height 0
-  overflow hidden
 
 .container
   //width 20em
@@ -139,10 +122,6 @@ input[type=radio]
  				width 25%
  
 	
-.form-controls
-  float right
-  width auto
-
 .btn
   color white
   //padding 8px 10px
@@ -157,6 +136,21 @@ input[type=radio]
   	background-color orange
   	border 4px solid orange !important //clean 
 
+.form-wrap 
+	text-align center
+	form 
+		max-width 640px
+		display inline-block 
+
+// Destination/Airport 
+.airport-field input
+	background url('http://widget.mozio.com/airport-marker.png') no-repeat 5px center white
+	background-position-x 7px
+.destination-field input
+	background url('http://widget.mozio.com/location-marker.png') no-repeat 5px center white
+	background-position-x 10px
+
+// Date, Time 
 .btn-group-date 
 	position relative
 	width 100%
@@ -175,6 +169,7 @@ input[type=radio]
 		background url('http://widget.mozio.com/time-icon.png') no-repeat 6px center white
 		background-position-x 10px		
 
+// Domestic or Int. Passengers
 .btn-group-details 
 	position relative
 	width 100%
@@ -200,7 +195,8 @@ input[type=radio]
 		background orange
 		border 4px solid orange
 		height 34px
-		
+
+// Circles, Radio, One-way, RT
 .btn-group-mode
 	position relative
 	width 100%
@@ -221,42 +217,18 @@ input[type=radio]
 			padding 0
 			.mode-radio-text
 				margin-left 40px
-	
-.btn-send
-  color white
-  width 150px
-  filter unqoute("progid:DXImageTransform.Microsoft.Alpha(enabled=false)")
-  opacity 1
-  -moz-transition all 0.5s
-  -o-transition all 0.5s
-  -webkit-transition all 0.5s
-  transition all 0.5s
-  text-align center
-  &:hover
-    color white
-    border-color highlight
-    background highlight
-[disabled] 
-  opacity 0.4
-  cursor default
-  background rgba(0,0,0,0)
-  color blue
-  &:hover
-    background rgba(0,0,0,0)
-    color blue
-    border-color kblue    
 
 // Search
 .btn-search
-  color white
+  color #333
   //padding 8px 10px
-  border 4px solid blue
+  border 4px solid green
   border-radius 4px
   margin 0 0 10px 0
   display block
   cursor pointer
   width 150px
-  background blue
+  background green
   -moz-transition all 0.5s
   -o-transition all 0.5s
   -webkit-transition all 0.5s
