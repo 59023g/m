@@ -2,17 +2,18 @@
 
 angular.module('mozioApp', [
   'ui.router',
+  'ui.bootstrap',
   'ngResource',
   'ngSanitize',
   'ajoslin.promise-tracker'
 ])
   .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
 
-    $urlRouterProvider.otherwise('/');
+    $urlRouterProvider.otherwise('/cities/sfo/fremont-shuttles-limos/');
 
     $stateProvider
       .state('/', {
-        url: '/',
+        url: '/cities/sfo/fremont-shuttles-limos/',
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
       });

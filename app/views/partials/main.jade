@@ -2,9 +2,68 @@
 header#header(height ng-style="style()")
   .container
     div(ng-include='\'partials/navbar\'')
-    .jumbotron
-      h1 Travel Like a Local.
-      h3 Mozio takes you from your doorstep to the airport.
+    .hero
+      h2 Travel Like a Local. 
+      h3 Mozio takes you from your doorstep to the airport. Try it out:
+    .form-wrap
+      form.email(name='form' novalidate)
+        .btn-group
+
+          //- To or from Radio
+          label.btn(ng-class="{'checked': isCheckedAirport == 'from_airport'}")
+            | From the airport
+            input(type='radio' name='dir' ng-model='isCheckedAirport' value='from_airport')
+
+          label.btn(ng-class="{'checked': isCheckedAirport == 'to_airport'}")
+            | To the airport
+            input(type='radio' name='dir' ng-model='isCheckedAirport' value='to_airport') 
+
+        //- Destination/Airport
+        .btn-group-destination
+          label(for='destination' ng-class="{'airport-field': isCheckedAirport == 'from_airport', 'destination-field': isCheckedAirport == 'to_airport'}")
+            input#name(placeholder="Your address" name='destination' ng-model='destionation' type='text' required)
+          
+          label(for='airport' ng-class="{'airport-field': isCheckedAirport != 'from_airport', 'destination-field': isCheckedAirport != 'to_airport'}")
+            input#email(placeholder="SFO" name='airport' ng-model='airport' value='airport' type='email' required)
+        
+        //- RT or OW
+        .btn-group-mode
+          .mode
+            label.mode-radio.btn(ng-class="{'checked': isChecked == 'round_trip'}")
+              .mode-radio-text Round trip
+              input(type='radio' name='mode' ng-model='isChecked' value='round_trip')
+          .mode
+            label.mode-radio.btn(ng-class="{'checked': isChecked == 'one_way'}")
+              .mode-radio-text One way
+              input(type='radio' name='mode' ng-model='isChecked' value='one_way') 
+        
+        //- Date
+        .btn-group-date
+          .mode
+            label(class="date")
+              input#name(placeholder="May 31, 2014" name='destination' ng-model='destionation' type='text' required)
+        
+          .mode
+            label(class="time")
+              input#email(placeholder="10:00PM" name='airport' ng-model='airport' value='airport' type='email' required)          
+        
+        //- Domestic & Passengers 
+        .btn-group-details
+          .mode.intDom
+            label()
+              select.btn
+                option(value='Domestic') Domestic
+                option(value='International') International
+          .mode.passengers
+            label()
+              select.btn
+                option(value='1') 1
+                option(value='2') 2
+          .mode.passengers.text Passengers
+
+        //- CTA!!
+        input.btn-search(type='submit' value='Search' name='subscribe' )
+
 
 .container
   | hello

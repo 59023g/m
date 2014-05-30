@@ -9,7 +9,7 @@ angular.module('mozioApp')
           'h': w.height(),
           'w': w.width()
         };
-      }, function(newValue, oldValue) {
+      }, function(newValue) {
         scope.windowHeight = newValue.h;
         scope.windowWidth = newValue.w;
 
@@ -24,5 +24,5 @@ angular.module('mozioApp')
       w.bind('resize', function() {
         scope.$apply();
       });
-    }
-  })
+    };
+  });

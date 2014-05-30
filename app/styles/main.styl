@@ -2,13 +2,22 @@ font = "ProximaNova", Arial, Sans-Serif
 font-color = #333
 blue = #0087ff
 orange = #f99e02
+green = #A8E653
+
+//FONT 
+@font-face
+  font-family 'ProximaNova'
+  src url('http://www.mozio.com/css/fonts/proxima_nova/ProximaNova-Reg-webfont.eot');
+  src url('http://www.mozio.com/css/fonts/proxima_nova/ProximaNova-Reg-webfont.eot?#iefix') format('embedded-opentype'), url('http://www.mozio.com/css/fonts/proxima_nova/ProximaNova-Reg-webfont.woff') format('woff'), url('http://www.mozio.com/css/fonts/proxima_nova/ProximaNova-Reg-webfont.ttf') format('truetype'), url('http://www.mozio.com/css/fonts/proxima_nova/ProximaNova-Reg-webfont.svg#ProximaNovaRgRegular') format('svg');
+  font-weight normal
+  font-style normal
 
 body
   padding-top 0px
   padding-bottom 20px
+  font-family font
 
-h1 
-	-webkit-font-smoothing antialiased
+ 
 .header,
 .marketing,
 .footer
@@ -16,7 +25,7 @@ h1
   padding-right 15px
 
 .header
-  border-bottom 1px solid #e5e5e5
+  border-bottom 1px solid white //#e5e5e5
   margin-bottom 30px
   h3
     margin-top 0
@@ -27,7 +36,7 @@ h1
 .footer
   padding-top 19px
   color #777
-  border-top 1px solid #e5e5e5
+  border-top 1px solid white 
 
 // Navbar
 .logo
@@ -36,15 +45,255 @@ h1
 	
 // Header/Above Fold
 #header 
-	background-color blue
+	background-color darkorange
 	z-index -99
 	padding-top 20px
-	h1 
-		color white
-		font-size 2em
-	h3
-		color white
+	color white
+	h1, h2, h3
+		-webkit-font-smoothing antialiased
+		margin-top 10px
+	.hero
+		text-align center
+		margin-bottom 20px
+
+
+// EMAIL 
+
+.email
+  -moz-transition all 0.5s
+  -o-transition all 0.5s
+  -webkit-transition all 0.5s
+  transition all 0.5s
+  color #333
+  
+label
+  display block
+  position relative
+  margin 0 0 10px 0
+  -moz-transition all 0.5s
+  -o-transition all 0.5s
+  -webkit-transition all 0.5s
+  transition all 0.5s
+  textarea
+    min-height 6em
+    
+.date-picker
+	background url(calendar-icon.png) no-repeat 6px center white
+.airport-field input
+	background url('http://widget.mozio.com/airport-marker.png') no-repeat 5px center white
+	background-position-x 7px
+.destination-field input
+	background url('http://widget.mozio.com/location-marker.png') no-repeat 5px center white
+	background-position-x 10px
+
+.checked
+	background-color blue
+
+label input, label textarea
+  display block
+  font-size 1em
+  width 100%
+  padding 0.5em 2.75em
+  border none
+  background #f9f9fa
+  border-radius 0.2em
+  -moz-transition all 0.5s
+  -o-transition all 0.5s
+  -webkit-transition all 0.5s
+  transition all 0.5s
+
+
+label input:focus, label textarea:focus
+  outline none
+  box-shadow 0 0 1em rgba(0,135,255,.8)
+  -moz-transition all 0.5s
+  -o-transition all 0.5s
+  -webkit-transition all 0.5s
+  transition all 0.5s
+  
+
+.clearfix
+  zoom 1
+  &:after
+    clear both
+
+.clearfix:before, .clearfix:after
+  content "\0020"
+  display block
+  height 0
+  overflow hidden
+
+.container
+  //width 20em
+  position relative
+ 
+input[type=radio]
+		display none
 		
+ .btn-group
+ 		width 100%
+ 		input[type=radio]
+ 			display none
+ 		.mode 
+ 			.btn
+ 				width 25%
+ 
+	
+.form-controls
+  float right
+  width auto
+
+.btn
+  color white
+  //padding 8px 10px
+  border 4px solid blue
+  border-radius 4px
+  margin 0 0 10px 0
+  display block
+  cursor pointer
+  width 50%
+  &:hover 
+  	color white
+  	background-color orange
+  	border 4px solid orange !important //clean 
+
+.btn-group-date 
+	position relative
+	width 100%
+	display inline-block
+	text-align center
+	.mode 
+		width 49% //clean
+		position relative
+		display inline-block
+		&:first-child
+			margin-right 2% 	
+	.date input
+		background url('http://widget.mozio.com/calendar-icon.png') no-repeat 6px center white
+		background-position-x 10px	
+	.time input
+		background url('http://widget.mozio.com/time-icon.png') no-repeat 6px center white
+		background-position-x 10px		
+
+.btn-group-details 
+	position relative
+	width 100%
+	display inline-block
+	text-align left	
+	.mode 
+		float left
+		&:first-child
+			margin-right 2%
+	.intDom
+		width 40%
+		min-width 150px
+	.passengers
+		width 10%
+		min-width 50px
+	.text
+		color white
+		margin-top 7px
+		margin-left 2%
+	select 
+		width 100%
+	label select
+		background orange
+		border 4px solid orange
+		height 34px
+		
+.btn-group-mode
+	position relative
+	width 100%
+	display inline-block
+	text-align center
+	.mode 
+		width 17%
+		min-width 125px
+		position relative
+		display inline-block
+		height 32px
+		.mode-radio 
+			height 30px
+			width 30px
+			border-radius 15px
+			border 4px solid blue
+			float left
+			padding 0
+			.mode-radio-text
+				margin-left 40px
+	
+.btn-send
+  color white
+  width 150px
+  filter unqoute("progid:DXImageTransform.Microsoft.Alpha(enabled=false)")
+  opacity 1
+  -moz-transition all 0.5s
+  -o-transition all 0.5s
+  -webkit-transition all 0.5s
+  transition all 0.5s
+  text-align center
+  &:hover
+    color white
+    border-color highlight
+    background highlight
+[disabled] 
+  opacity 0.4
+  cursor default
+  background rgba(0,0,0,0)
+  color blue
+  &:hover
+    background rgba(0,0,0,0)
+    color blue
+    border-color kblue    
+
+// Search
+.btn-search
+  color white
+  //padding 8px 10px
+  border 4px solid blue
+  border-radius 4px
+  margin 0 0 10px 0
+  display block
+  cursor pointer
+  width 150px
+  background blue
+  -moz-transition all 0.5s
+  -o-transition all 0.5s
+  -webkit-transition all 0.5s
+  transition all 0.5s
+  float right
+  &:hover, &:focus
+  	color #333
+  	background-color green
+  	border 4px solid green !important //clean 
+	  -moz-transition all 0.5s
+	  -o-transition all 0.5s
+	  -webkit-transition all 0.5s
+	  transition all 0.5s
+	  	
+.sent
+  filter unqoute("progid:DXImageTransform.Microsoft.Alpha(enabled=false)")
+  opacity 1
+  -moz-transition all 0.5s ease-in-out
+  -o-transition all 0.5s ease-in-out
+  -webkit-transition all 0.5s ease-in-out
+  -webkit-transition-delay 1s
+  transition all 0.5s ease-in-out
+    
+.hidden
+  filter unqoute("progid:DXImageTransform.Microsoft.Alpha(Opacity=0)")
+  opacity 0
+  position absolute
+  z-index -1
+
+.no-placeholder
+  display none
+
+.ie-lt9
+  .no-placeholder
+    display block
+
+
 @media (min-width:768px)
    .container 
     	max-width 1060px//730px
