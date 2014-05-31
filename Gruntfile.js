@@ -326,6 +326,11 @@ module.exports = function(grunt) {
           ]
         }, {
           expand: true,
+          cwd: '<%= yeoman.app %>/bower_components/ionicons',
+          dest: '<%= yeoman.dist %>/public',
+          src: 'fonts/*'
+        }, {
+          expand: true,
           dot: true,
           cwd: '<%= yeoman.app %>/views',
           dest: '<%= yeoman.dist %>/views',
