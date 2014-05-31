@@ -1,20 +1,287 @@
-div(ng-include='\'partials/navbar\'')
 
-.jumbotron
-  h1
-    | 'Allo, 'Allo!
+header#header(height ng-style="style()")
+	//-.photo-credit
+		a(href="https://www.flickr.com/photos/steventheamusing/" target="_blank")
+			| S. Christensen -
+			i Mission Peak. Fremont, CA
+	.container
+		div(ng-include='\'partials/navbar\'')
+		.hero
+			//- Travel Like a Local. // Plan/reserve/last mile //fast/easy // Mozio takes you from your doorstep to the airport. 
+			.copy
+				h2 You've made it this far. 
+				h3 Let Mozio book your shuttle or limo to SFO.
+			.form-wrap
+				form.email(name='form' novalidate)
+					.btn-group
 
-  p.lead
-    <img src="images/yeoman.png" alt="I'm Yeoman">
-    br
-    | Always a pleasure scaffolding your apps.
-  p
-    a.btn.btn-lg.btn-success(ng-href='#') Splendid!
-    
-.row.marketing
-  div(ng-repeat='thing in awesomeThings')
-    h4 {{thing.name}}
-    p {{thing.info}}
+						//- To or from Radio
+						label.btn(ng-class="{'checked': isCheckedAirport == 'from_airport'}")
+							| From the airport
+							input(type='radio' name='dir' ng-model='isCheckedAirport' value='from_airport')
 
-.footer
-  p ♥ from the Yeoman team
+						label.btn(ng-class="{'checked': isCheckedAirport == 'to_airport'}")
+							| To the airport
+							input(type='radio' name='dir' ng-model='isCheckedAirport' value='to_airport') 
+
+					//- Destination/Airport
+					.btn-group-destination
+						label(for='destination' ng-class="{'airport-field': isCheckedAirport == 'from_airport', 'destination-field': isCheckedAirport == 'to_airport'}")
+							input#name(placeholder="Your address" name='destination' ng-model='destionation' type='text' required autofocus)
+						
+						label(for='airport' ng-class="{'airport-field': isCheckedAirport != 'from_airport', 'destination-field': isCheckedAirport != 'to_airport'}")
+							input#email(placeholder="SFO" name='airport' ng-model='airport' value='airport' type='email' required)
+					
+					//- RT or OW
+					.btn-group-mode
+						.mode
+							label.mode-radio.btn(ng-class="{'checked': isChecked == 'round_trip'}")
+								.mode-radio-text Round trip
+								input(type='radio' name='mode' ng-model='isChecked' value='round_trip')
+						.mode
+							label.mode-radio.btn(ng-class="{'checked': isChecked == 'one_way'}")
+								.mode-radio-text One way
+								input(type='radio' name='mode' ng-model='isChecked' value='one_way') 
+					
+					//- Date
+					.btn-group-date
+						.mode
+							label(class="date")
+								input#name(placeholder="May 31, 2014" name='destination' ng-model='destionation' type='text' required)
+					
+						.mode
+							label(class="time")
+								input#name(placeholder="10:00PM" name='airport' ng-model='airport' value='airport' type='email' required)          
+					
+					//- Domestic & Passengers 
+					.btn-group-details
+						.mode.intDom
+							label()
+								select.btn
+									option(value='Domestic') Domestic
+									option(value='International') International
+						.mode.passengers
+							label()
+								select.btn
+									option(value='1') 1
+									option(value='2') 2
+						.mode.passengers.text Passengers 
+					//- CTA!!
+					input.btn-search(type='submit' value='Search' name='subscribe' )
+
+	.arrow
+		a(href='#')
+			img(src='images/down-arrow.png')
+	//-move below fold
+
+
+.content
+	.press.row.col-md-12(style="background-color:#333")
+		.container
+			.logos 
+				h4(style='margin-bottom:20px;color:white') Press:
+				a(href='http://techcrunch.com/2014/05/14/mozio-raises-750k-for-its-airport-ground-transportation-search-engine/' target="_blank")
+					img(src='images/techcrunch-logo.png' style="height:50px;width:auto") 
+				a(href='http://mashable.com/2012/08/08/mozio/' target="_blank")
+					img(src='images/mashable.png')  
+				a(href='www.huffingtonpost.com/david-litwak/mozio-getting-to-the-airport_b_1643820.html' target="_blank") 
+					img(src='images/huff-logo.png')
+				a(href='http://venturebeat.com/2012/10/23/mozio-guides-travelers-the-final-mile-from-runway-to-driveway/' target="_blank")  
+					img(src='images/venturebeat-logo.png')
+	#map.row.col-md-12(style="background: url('images/map.png');background-size:cover;height:600px;background-attachment fixed;background-position-x:14%")
+			.container
+				.row
+					.col-sm-5
+						.item-intro
+							h3 Cheapest Limos and Shuttles from SFO
+						a.item 
+							.info.map
+								h4 Book the SuperShuttle Blue Shuttle from Fremont to SFO Airport
+								p Shared-Van, Private Van
+						a.item
+							.info
+								h5 Magnolia Transportation
+								p Up to 3 Passengers
+							.price 
+								b $104.40 
+								br 
+								| SFO > Fremont	
+						a.item
+							.info						
+								h5 Prime Limousines
+								p Up to 4 Passengers
+							.price 
+								b $105.10 
+								br 
+								| SFO > Fremont	
+						a.item
+							.info						
+								h5 Carmel Car & Limo 
+								p Up to 3 Passengers
+							.price 
+								b $106.92 
+								br 
+								| SFO > Fremont											
+						a.item
+							.info						
+								h5 More SFO Limousines, Sedans, and SUVs >										
+					.col-sm-7
+	.info.row.col-md-12(style='margin-bottom:0;padding-bottom:0')
+		.container
+			.row(style='margin-bottom:0;padding-bottom:0')
+				//-h2(style='text-align:center') Header
+				.col-md-4
+					.row
+						.col-md-3.col-xs-2
+							img(src='http://www.mozio.com/images/frontend/sign-post.png')
+						.col-md-9.col-xs-10
+							h4 How do I get from San Francisco International Airport (SFO) to central Fremont?
+							p Shuttles and Limos to or from San Francisco International Airport (SFO), just type in your Fremont address.
+				.col-md-4
+					.row
+						.col-md-3.col-xs-2
+							img(src='http://www.mozio.com/images/frontend/map.png')
+						.col-md-9.col-xs-10
+							h4 Travel cheaply from the Fremont city center to SFO.
+							p Mozio searches shuttles, taxis, limos, airporters, rideshare and public transit from Downtown Fremont to San Francisco International Airport (SFO). Find reliable Shuttle and Limo transportation from central Fremont to SFO
+				.col-md-4
+					.row
+						.col-md-3.col-xs-2
+							img(src='http://www.mozio.com/images/frontend/layout.png')
+						.col-md-9.col-xs-10
+							h4 Book local shuttle, limo and taxi providers to Downtown Fremont from SFO
+							p Don't deal with calling or emailing local providers, just book your shuttle, limo or taxi from SFO to the Fremont city center with a couple clicks.
+	.social-media.row.col-md-12(style='background-color:black;padding-bottom:20px')
+		.container
+			.col-md-12
+				h4 Follow us on Google+, Twitter and Facebook to get Shuttle and Limo discounts to the SFO Airport!
+				.row 
+					.col-md-5
+						p Discounts on SuperShuttle, GO Airport Shuttle, Grayline and more from Fremont to the San Francisco International Airport(SFO) Airport ONLY available on Google+, Facebook and Twitter.
+					.col-md-7
+						i.icon.ion-social-googleplus
+						i.icon.ion-social-twitter
+						i.icon.ion-social-facebook
+	.row.col-md-12.links(style="background-color: #333")
+		.container
+			.row 
+				.col-md-4
+					h5 Yearly Festivals Held in Fremont
+					ul 
+						li 
+							a(href='') Bay Area Indie Music Festival
+						li 
+							a(href='') Bay Area Rock Festival
+						li 
+							a(href='') Hardly Strictly Bluegrass
+						li 
+							a(href='') Harmony Sweepstakes A Cappella Festival
+						li 
+							a(href='') Outside Lands Music and Arts Festival
+				.col-md-4
+					h5 Amusement Parks Around Fremont
+					ul 
+						li 
+							a(href='') Splash Pad Park
+						li 
+							a(href='') Oakland Zoo
+						li 
+							a(href='') Aqua Adventure
+						li 
+							a(href='') California's Great America
+						li 
+							a(href='') Waterworld California
+				.col-md-4
+					h5 Airports Nearby SFO
+					.col-xs-9
+						ul 
+							li 
+								a(href='') Half Moon Bay Airport 
+							li 
+								a(href='') San Carlos Airport 
+							li 
+								a(href='') Oakland International Airport
+							li 
+								a(href='') Hayward Executive Airport 
+							li 
+								a(href='') Palo Alto Airport of Santa Clara Co
+					.col-xs-3
+						ul 
+							li 10 mi
+							li 10 mi 
+							li 11 mi
+							li 14 mi
+							li 18 mi
+	.seo-footer.row.col-md-12
+			.container
+				p Budget shared-ride shuttles, airporters, taxis, limos, public transit, rideshare and rental cars from Fremont to San Francisco International Airport (SFO) with Mozio. Search hundreds of providers and find the cheapest or most efficient way to get to and from San Francisco International Airport (SFO) to your residence or hotel in Fremont. Mozio is the leading provider of SuperShuttle, GO Airport Shuttles, Grayline and CoachUSA shuttles, taxis, limos and airporters, in addition to many smaller, local provider that serve Fremont.					
+	.footer.row.col-md-12
+		.container
+			.col-xs-3
+				img.logo(src='images/mozio-logo.png')
+			.col-xs-3
+				ul.group
+					li
+						a(target='_self', href='/home.html') Home
+					li
+						a(target='_self', href='/about.html') About
+					li
+						a(target='_self', href='/team.html') Team
+					li
+						a(target='_self', href='/jobs.html') Jobs
+					li
+						a(target='_self', href='/affiliates.html') Affiliates
+					li
+						a(target='_self', href='/online-travel-landscape') Online Travel Landscape
+					li
+						a(target='_self', href='/termsofservice.html') Terms of Service
+					li
+						a(target='_self', href='/privacypolicy.html') Privacy Policy
+					li
+						a(target='_self', href='/faq.html') FAQ
+					li
+						a(target='_self', href='http://www.mozio.com/blog/') Blog
+			.col-xs-3
+				ul.group
+					li
+						a(target='_self', href='/stadiums.html') Stadiums
+					li
+						a(target='_self', href='/convention-centers.html') Convention Centers
+					li
+						a(target='_self', href='/ski-resorts.html') Ski Resorts
+					li
+						a(target='_self', href='/universities.html') Universities
+					li
+						a(target='_self', href='/amusement-parks.html') Amusement Parks
+					li
+						a(target='_self', href='/festivals.html') Festivals
+					li
+						a(target='_self', href='/stations.html') Stations
+					li
+						a(target='_self', href='/landmarks.html') Popular Landmarks
+			.col-xs-3
+				ul.group
+					li
+						a(target='_self', href='/limos.html') Limos
+					li
+						a(target='_self', href='/shuttles.html') Shuttles
+					li
+						a(target='_self', href='/airports.html') Airports
+					li
+						a(target='_self', href='/providers.html') Providers
+					li
+						a(target='_self', href='/neighborhoods.html') Neighborhoods
+					li
+						a(target='_self', href='/cities.html') Cities
+					li
+						a(target='_self', href='/hotels.html') Hotels
+					li
+						a(target='_self', href='/ports.html') Ports
+
+
+
+
+
+
+
+

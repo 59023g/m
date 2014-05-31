@@ -1,20 +1,23 @@
 'use strict';
 
 angular.module('mozioApp', [
-  'ngCookies',
+  'ui.router',
+  'ui.bootstrap',
   'ngResource',
   'ngSanitize',
-  'ngRoute'
+  'ajoslin.promise-tracker'
 ])
-  .config(function ($routeProvider, $locationProvider) {
-    $routeProvider
-      .when('/', {
+  .config(function($stateProvider, $urlRouterProvider, $locationProvider) {
+
+    $urlRouterProvider.otherwise('/cities/sfo/fremont-shuttles-limos/');
+
+    $stateProvider
+      .state('/', {
+        url: '/cities/sfo/fremont-shuttles-limos/',
         templateUrl: 'partials/main',
         controller: 'MainCtrl'
-      })
-      .otherwise({
-        redirectTo: '/'
       });
-      
+
     $locationProvider.html5Mode(true);
+
   });

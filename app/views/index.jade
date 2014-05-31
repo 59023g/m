@@ -9,13 +9,15 @@ html.no-js
     meta(charset="utf-8")
     meta(http-equiv="X-UA-Compatible", content="IE=edge,chrome=1")
     base(href="/")
-    title
+    title Shuttles, Limos to Fremont from SFO San Francisco International Airport. Magnolia Transportation, Prime Limousines, Carmel Car & Limo, Blackline Limousine Services, 101 Limousine, Shared-ride Vans, Taxis, Private Sedans, SUVs, Blackcars, Airporters or Scheduled Services to Fremont.
     meta(name="description", content="")
     meta(name="viewport", content="width=device-width")
     // Place favicon.ico and apple-touch-icon.png in the root directory
+    <link href="images/favicon.png" rel="icon">
     <!-- build:css(app) styles/vendor.css -->
     <!-- bower:css -->
     <link rel="stylesheet" href="bower_components/bootstrap/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="bower_components/ionicons/css/ionicons.css" />
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:css({.tmp,app}) styles/main.css -->
@@ -32,14 +34,7 @@ html.no-js
 
     // Add your site or application content here
     
-    div(class="container" ng-view)
-
-    // Google Analytics: change UA-XXXXX-X to be your site's ID.
-    script.
-      var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
-      (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
-      g.src='//www.google-analytics.com/ga.js';
-      s.parentNode.insertBefore(g,s)}(document,'script'));
+    div(ui-view)
 
     <!-- build:js(app) scripts/vendor.js -->
     <!-- bower:js -->
@@ -52,11 +47,14 @@ html.no-js
     <script src="bower_components/angular-route/angular-route.js"></script>
     <script src="bower_components/angular-ui-router/release/angular-ui-router.js"></script>
     <script src="bower_components/angular-promise-tracker/promise-tracker.js"></script>
+    <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
     <!-- build:js({.tmp,app}) scripts/scripts.js -->
     <script src="scripts/app.js"></script>
     <script src="scripts/controllers/main.js"></script>
     <script src="scripts/controllers/navbar.js"></script>
+    <script src="scripts/directives/height.js"></script>
+    <script src="scripts/directives/map.js"></script>
     <!-- endbuild -->
     
