@@ -1,6 +1,6 @@
 
 header#header(height ng-style="style()")
-	.photo-credit
+	//-.photo-credit
 		a(href="https://www.flickr.com/photos/steventheamusing/" target="_blank")
 			| S. Christensen -
 			i Mission Peak. Fremont, CA
@@ -10,7 +10,7 @@ header#header(height ng-style="style()")
 			//- Travel Like a Local. // Plan/reserve/last mile //fast/easy // Mozio takes you from your doorstep to the airport. 
 			.copy
 				h2 You've made it this far. 
-				h3 Let Mozio book your last-mile shuttle or limo.
+				h3 Let Mozio book your shuttle or limo to SFO.
 			.form-wrap
 				form.email(name='form' novalidate)
 					.btn-group
@@ -27,7 +27,7 @@ header#header(height ng-style="style()")
 					//- Destination/Airport
 					.btn-group-destination
 						label(for='destination' ng-class="{'airport-field': isCheckedAirport == 'from_airport', 'destination-field': isCheckedAirport == 'to_airport'}")
-							input#name(placeholder="Your address" name='destination' ng-model='destionation' type='text' required)
+							input#name(placeholder="Your address" name='destination' ng-model='destionation' type='text' required autofocus)
 						
 						label(for='airport' ng-class="{'airport-field': isCheckedAirport != 'from_airport', 'destination-field': isCheckedAirport != 'to_airport'}")
 							input#email(placeholder="SFO" name='airport' ng-model='airport' value='airport' type='email' required)
@@ -51,7 +51,7 @@ header#header(height ng-style="style()")
 					
 						.mode
 							label(class="time")
-								input#email(placeholder="10:00PM" name='airport' ng-model='airport' value='airport' type='email' required)          
+								input#name(placeholder="10:00PM" name='airport' ng-model='airport' value='airport' type='email' required)          
 					
 					//- Domestic & Passengers 
 					.btn-group-details
@@ -70,12 +70,13 @@ header#header(height ng-style="style()")
 					input.btn-search(type='submit' value='Search' name='subscribe' )
 
 	.arrow
-		img(src='images/down-arrow.png')
+		a(href='#')
+			img(src='images/down-arrow.png')
 	//-move below fold
 
 
 .content
-	.row.col-md-12(style="background-color:#333")
+	.press.row.col-md-12(style="background-color:#333")
 		.container
 			.logos 
 				h4(style='margin-bottom:20px;color:white') Press:
@@ -87,10 +88,10 @@ header#header(height ng-style="style()")
 					img(src='images/huff-logo.png')
 				a(href='http://venturebeat.com/2012/10/23/mozio-guides-travelers-the-final-mile-from-runway-to-driveway/' target="_blank")  
 					img(src='images/venturebeat-logo.png')
-	#map.row.col-md-12(style="background: url('images/map.png');background-size:cover;height:600px;background-attachment fixed")
+	#map.row.col-md-12(style="background: url('images/map.png');background-size:cover;height:600px;background-attachment fixed;background-position-x:14%")
 			.container
 				.row
-					.col-md-5
+					.col-sm-5
 						.item-intro
 							h3 Cheapest Limos and Shuttles from SFO
 						a.item 
@@ -124,8 +125,8 @@ header#header(height ng-style="style()")
 						a.item
 							.info						
 								h5 More SFO Limousines, Sedans, and SUVs >										
-					.col-md-7
-	.row.col-md-12(style='margin-bottom:0;padding-bottom:0')
+					.col-sm-7
+	.info.row.col-md-12(style='margin-bottom:0;padding-bottom:0')
 		.container
 			.row(style='margin-bottom:0;padding-bottom:0')
 				//-h2(style='text-align:center') Header
@@ -150,7 +151,17 @@ header#header(height ng-style="style()")
 						.col-md-9.col-xs-10
 							h4 Book local shuttle, limo and taxi providers to Downtown Fremont from SFO
 							p Don't deal with calling or emailing local providers, just book your shuttle, limo or taxi from SFO to the Fremont city center with a couple clicks.
-	.social-media.row.col-md-12(style='background-color:black')
+	.social-media.row.col-md-12(style='background-color:black;padding-bottom:20px')
+		.container
+			.col-md-12
+				h4 Follow us on Google+, Twitter and Facebook to get Shuttle and Limo discounts to the SFO Airport!
+				.row 
+					.col-md-5
+						p Discounts on SuperShuttle, GO Airport Shuttle, Grayline and more from Fremont to the San Francisco International Airport(SFO) Airport ONLY available on Google+, Facebook and Twitter.
+					.col-md-7
+						i.icon.ion-social-googleplus
+						i.icon.ion-social-twitter
+						i.icon.ion-social-facebook
 	.row.col-md-12.links(style="background-color: #333")
 		.container
 			.row 
@@ -206,9 +217,9 @@ header#header(height ng-style="style()")
 				p Budget shared-ride shuttles, airporters, taxis, limos, public transit, rideshare and rental cars from Fremont to San Francisco International Airport (SFO) with Mozio. Search hundreds of providers and find the cheapest or most efficient way to get to and from San Francisco International Airport (SFO) to your residence or hotel in Fremont. Mozio is the leading provider of SuperShuttle, GO Airport Shuttles, Grayline and CoachUSA shuttles, taxis, limos and airporters, in addition to many smaller, local provider that serve Fremont.					
 	.footer.row.col-md-12
 		.container
-			.col-md-3
+			.col-xs-3
 				img.logo(src='images/mozio-logo.png')
-			.col-md-3
+			.col-xs-3
 				ul.group
 					li
 						a(target='_self', href='/home.html') Home
@@ -230,7 +241,7 @@ header#header(height ng-style="style()")
 						a(target='_self', href='/faq.html') FAQ
 					li
 						a(target='_self', href='http://www.mozio.com/blog/') Blog
-			.col-md-3
+			.col-xs-3
 				ul.group
 					li
 						a(target='_self', href='/stadiums.html') Stadiums
@@ -248,7 +259,7 @@ header#header(height ng-style="style()")
 						a(target='_self', href='/stations.html') Stations
 					li
 						a(target='_self', href='/landmarks.html') Popular Landmarks
-			.col-md-3
+			.col-xs-3
 				ul.group
 					li
 						a(target='_self', href='/limos.html') Limos

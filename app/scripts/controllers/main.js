@@ -8,7 +8,7 @@ angular.module('mozioApp')
 
 
     $scope.isCheckedAirport = 'to_airport';
-    $scope.isChecked = 'round_trip';
+    $scope.isChecked = 'one_way';
 
     $scope.airport = 'SFO';
 
