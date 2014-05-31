@@ -7,9 +7,10 @@ header#header(height ng-style="style()")
 	.container
 		div(ng-include='\'partials/navbar\'')
 		.hero
-			//- Travel Like a Local. Mozio takes you from your doorstep to the airport. Try it out:
-			h2 H2 Words words words 
-			h3 H3 Words words words Words words words Words words 
+			//- Travel Like a Local. // Plan/reserve/last mile //fast/easy // Mozio takes you from your doorstep to the airport. 
+			.copy
+				h2 The last mile.
+				h3 Book a shuttle or limo to and from Fremont, CA.
 			.form-wrap
 				form.email(name='form' novalidate)
 					.btn-group
@@ -74,7 +75,7 @@ header#header(height ng-style="style()")
 
 
 .content
-	.row.col-12(style="background-color:#333")
+	.row.col-md-12(style="background-color:#333")
 		.container
 			.logos 
 				h4 Press:
@@ -86,8 +87,35 @@ header#header(height ng-style="style()")
 					img(src='images/huff-logo.png')
 				a(href='http://venturebeat.com/2012/10/23/mozio-guides-travelers-the-final-mile-from-runway-to-driveway/' target="_blank")  
 					img(src='images/venturebeat-logo.png')
-	.row-col-12
-		| hello
+	.row.col-md-12(style='margin-bottom:0;padding-bottom:0')
+		.container
+			.row(style='margin-bottom:0;padding-bottom:0')
+				//-h2(style='text-align:center') Header
+				.col-md-4
+					.row
+						.col-md-3.col-xs-2
+							img(src='http://www.mozio.com/images/frontend/sign-post.png')
+						.col-md-9.col-xs-10
+							h2 Last mile:
+							p Shuttles and Limos to or from San Francisco International Airport (SFO), just type in your Fremont address.
+				.col-md-4
+					.row
+						.col-md-3.col-xs-2
+							img(src='http://www.mozio.com/images/frontend/map.png')
+						.col-md-9.col-xs-10
+							h2 With:
+							p Mozio searches shuttles, taxis, limos, airporters, rideshare and public transit from Downtown Fremont to San Francisco International Airport (SFO). Find reliable Shuttle and Limo transportation from central Fremont to SFO
+				.col-md-4
+					.row
+						.col-md-3.col-xs-2
+							img(src='http://www.mozio.com/images/frontend/layout.png')
+						.col-md-9.col-xs-10
+							h2 Convenience:
+							p Don't deal with calling or emailing local providers, just book your shuttle, limo or taxi from SFO to the Fremont city center with a couple clicks.
+	map.row.col-md-12#map-canvas
+		
+
+
 	.footer
 		p ♥
 

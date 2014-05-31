@@ -12,5 +12,6 @@ angular.module('mozioApp')
 
     $scope.airport = 'SFO';
 
+    $scope.mapPin = 'No pin set yet';
 
   });
