@@ -3,6 +3,7 @@ font-color = #333
 blue = #0087ff
 orange = #f99e02
 green = #A8E653
+radius = 3px
 
 //FONT 
 @font-face
@@ -94,7 +95,9 @@ body
     padding-bottom 40px
     margin-bottom 20px
     margin-left 0
-    margin-right 0 
+    margin-right 0
+    padding-left 0
+    padding-right 0 
     &:first-child
       padding-top 20px
   p 
@@ -296,9 +299,70 @@ input[type=radio]
     opacity .5
     margin-right 50px
 
-#map-canvas
-  width 100%
+#map 
+  background-size cover 
   height 450px
+  .row
+    padding-bottom 0 
+  .col-md-5
+    //background-color white !important
+    height 410px
+    h4
+      color orange
+      margin-bottom 0
+      border-radius radius
+      margin-top 0
+
+  .item
+    position relative
+    display inline-block
+    width 100%
+    padding 5px 10px
+    margin-bottom 10px
+    background-color #f9f9fa
+    cursor pointer
+    clear both
+    border-radius radius
+    -moz-transition all 0.1s
+    -o-transition all 0.1s
+    -webkit-transition all 0.1s
+    transition all 0.1s 
+    &:first-child
+      .info
+        background url('https://s3.amazonaws.com/mozio-provider-logo/supershuttlelogo')
+        background-size 40px 40px
+        padding 0 50px
+        background-repeat no-repeat
+    &:last-child
+      .info 
+        background none
+        padding 0 
+    &:hover
+      background-color white
+      box-shadow 0 0 1em rgba(255,255,255,1)
+      -moz-transition all 0.1s
+      -o-transition all 0.1s
+      -webkit-transition all 0.1s
+      transition all 0.1s 
+    .info
+      float left
+      background url('https://s3.amazonaws.com/mozio-provider-logo/defaults/default_blackcar_provider1')
+      background-size 26px 26px
+      background-repeat no-repeat
+      padding 0 35px
+      h5 
+        margin 0
+        color blue
+        font-size 14px
+      p
+        font-size 10px
+    .price 
+      display inline-block
+      float right
+      color blue
+      font-size 12px
+      b 
+        color orange 
 
 
 @media (min-width:768px)
