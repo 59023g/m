@@ -78,16 +78,21 @@ header#header(height ng-style="style()")
 .content
 	.press.row.col-md-12(style="background-color:#333")
 		.container
-			.logos 
-				h4(style='margin-bottom:20px;color:white') Press:
-				a(href='http://techcrunch.com/2014/05/14/mozio-raises-750k-for-its-airport-ground-transportation-search-engine/' target="_blank")
-					img(src='images/techcrunch-logo.png' style="height:50px;width:auto") 
-				a(href='http://mashable.com/2012/08/08/mozio/' target="_blank")
-					img(src='images/mashable.png')  
-				a(href='www.huffingtonpost.com/david-litwak/mozio-getting-to-the-airport_b_1643820.html' target="_blank") 
-					img(src='images/huff-logo.png')
-				a(href='http://venturebeat.com/2012/10/23/mozio-guides-travelers-the-final-mile-from-runway-to-driveway/' target="_blank")  
-					img(src='images/venturebeat-logo.png')
+			.row
+				.logos 
+					h4(style='margin-bottom:20px;color:white') Press:
+					.col-sm-3
+						a(href='http://techcrunch.com/2014/05/14/mozio-raises-750k-for-its-airport-ground-transportation-search-engine/' target="_blank")
+							img(src='images/techcrunch-logo.png' style="height:50px;width:auto") 
+					.col-sm-3
+						a(href='http://mashable.com/2012/08/08/mozio/' target="_blank")
+							img(src='images/mashable.png')  
+					.col-sm-3
+						a(href='www.huffingtonpost.com/david-litwak/mozio-getting-to-the-airport_b_1643820.html' target="_blank") 
+							img(src='images/huff-logo.png')
+					.col-sm-3
+						a(href='http://venturebeat.com/2012/10/23/mozio-guides-travelers-the-final-mile-from-runway-to-driveway/' target="_blank")  
+							img(src='images/venturebeat-logo.png')
 	#map.row.col-md-12(style="background: url('images/map.png');background-size:cover;height:450px")
 			.container
 				.row
@@ -211,7 +216,7 @@ header#header(height ng-style="style()")
 		.container
 			.col-xs-3
 				img.logo(src='images/mozio-logo.png')
-			.col-xs-3
+			.col-md-3
 				ul.group
 					li
 						a(target='_self', href='/home.html') Home
@@ -233,7 +238,7 @@ header#header(height ng-style="style()")
 						a(target='_self', href='/faq.html') FAQ
 					li
 						a(target='_self', href='http://www.mozio.com/blog/') Blog
-			.col-xs-3
+			.col-md-3
 				ul.group
 					li
 						a(target='_self', href='/stadiums.html') Stadiums
@@ -251,7 +256,7 @@ header#header(height ng-style="style()")
 						a(target='_self', href='/stations.html') Stations
 					li
 						a(target='_self', href='/landmarks.html') Popular Landmarks
-			.col-xs-3
+			.col-md-3
 				ul.group
 					li
 						a(target='_self', href='/limos.html') Limos
